@@ -26,12 +26,15 @@
   .example-sidenav {
     width: 20%;
     padding: 10px;
+    background: linear-gradient(to bottom, #570205, #01000f 70%); /* Reemplaza los colores con los de tu elección */
+    color: white;
   }
 
   .example-sidenav button{
     width: 100%;
     height: 60px;
     border: none;
+    color: white;
     border-bottom: 1px solid #c6bdbd;
     background-color: transparent;
     font-size: 30px;
@@ -40,5 +43,6 @@
 
   .example-sidenav button:hover {
     background-color: lightgray;
+    color: black;
     cursor: pointer;
   }
