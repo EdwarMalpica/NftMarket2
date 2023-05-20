@@ -12,8 +12,9 @@ import { BodyComponent } from './modules/view/body/body.component';
 import { PresentationComponent } from './modules/view/body/presentation/presentation/presentation.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
-import { NftIndividualComponent } from './modules/view/body/nft-individual/nft-individual.component';
+import { NftIndividualComponent } from './modules/view/body/nft-individual_previo/nft-individual.component';
 import { MyAccountComponent } from './modules/view/body/my-account/my-account.component';
+import { InfoNftComponent } from './modules/view/body/info-nft/info-nft.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MyAccountComponent } from './modules/view/body/my-account/my-account.co
     BodyComponent,
     PresentationComponent,
     NftIndividualComponent,
-    MyAccountComponent
+    MyAccountComponent,
+    InfoNftComponent
   ],
   imports: [
     BrowserModule,

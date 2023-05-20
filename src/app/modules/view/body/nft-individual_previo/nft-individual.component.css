@@ -169,11 +169,11 @@
 .card .card_content .details .actionBtn{
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 30px;
 }
 
 .card .card_content .details .actionBtn button{
-    padding: 10px 20px;
+    padding: 10px 10px;
     border: none;
     outline: none;
     border-radius: 5px;
