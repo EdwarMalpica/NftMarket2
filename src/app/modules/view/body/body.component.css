@@ -11,6 +11,12 @@
     justify-content: center;
     
   }
+  .sticky-button {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
 
   .overlay-button {
     position: absolute;
@@ -21,7 +27,7 @@
   }
 
   .overlay-button mat-icon{
-    color: aliceblue;
+    color: #a5a5a5;
   }
   .example-sidenav {
     width: 20%;
@@ -39,6 +45,7 @@
     background-color: transparent;
     font-size: 30px;
     transition: background-color 0.3s ease;
+    position: initial;
   }
 
   .example-sidenav button:hover {

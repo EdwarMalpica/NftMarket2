@@ -15,11 +15,13 @@
         Mintear
       </button>
     </mat-drawer>
-  
-    <div class="example-sidenav-content">
+    <div class="sticky-button">
       <button type="button" mat-button (click)="drawer.toggle()" *ngIf="isConected" class="overlay-button">
         <mat-icon fontIcon="menu"></mat-icon>
       </button>
+    </div>
+    <div class="example-sidenav-content">
+
       <app-presentation [isConected]="isConected" (cambioVariable)="actualizarVariablePadre($event)"></app-presentation>
     </div>
   
