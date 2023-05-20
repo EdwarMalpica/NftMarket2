@@ -1,0 +1,72 @@
+.portada {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 40vh; /* Ajusta la altura deseada */
+}
+
+.portada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.circle-container {
+    width: 90px; /* Ajusta el tamaño del componente circular según tus necesidades */
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+.circle-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+    object-fit: cover;
+  }
+
+.head_container
+{
+    width: 98%;
+    height: 14vh;
+    margin: 20px;
+    padding: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: #ffffff;
+}
+.head_container > div {
+    border-radius: 5px;
+    margin: 8px;
+    padding: 1px;
+
+  }
+.head_container .data{
+    padding: 0%;
+}
+
+.divider {
+    width: 100%;
+    height: 1.2px;
+    background-color: #3e68a3; /* Cambia el color de la línea según tus necesidades */
+    margin: 10px 0; /* Ajusta el margen superior e inferior según tus necesidades */
+  }
+
+.nfts{
+    
+    width: 80%;
+    height: 30vh;
+    margin: 15px; /* Ajusta el valor del margen según tus necesidades */
+    padding: auto;
+    margin-left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+ 
+}
+
+.nfts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ajusta el número de columnas */
+    grid-gap: 10px; /* Ajusta el espacio entre los componentes */
+  }

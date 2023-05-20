@@ -13,6 +13,7 @@ import { PresentationComponent } from './modules/view/body/presentation/presenta
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import { NftIndividualComponent } from './modules/view/body/nft-individual/nft-individual.component';
+import { MyAccountComponent } from './modules/view/body/my-account/my-account.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NftIndividualComponent } from './modules/view/body/nft-individual/nft-i
     ChartExampleComponent,
     BodyComponent,
     PresentationComponent,
-    NftIndividualComponent
+    NftIndividualComponent,
+    MyAccountComponent
   ],
   imports: [
     BrowserModule,
