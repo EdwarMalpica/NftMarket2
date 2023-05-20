@@ -8,11 +8,15 @@ import {MatButtonModule} from '@angular/material/button';
 import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
 import { ChartExampleComponent } from './modules/graficas/chart-example/chart-example.component';
+import { BodyComponent } from './modules/view/body/body.component';
+import { PresentationComponent } from './modules/view/body/presentation/presentation/presentation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChartExampleComponent
+    ChartExampleComponent,
+    BodyComponent,
+    PresentationComponent
   ],
   imports: [
     BrowserModule,
