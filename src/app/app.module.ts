@@ -12,13 +12,15 @@ import { BodyComponent } from './modules/view/body/body.component';
 import { PresentationComponent } from './modules/view/body/presentation/presentation/presentation.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+import { NftIndividualComponent } from './modules/view/body/nft-individual/nft-individual.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChartExampleComponent,
     BodyComponent,
-    PresentationComponent
+    PresentationComponent,
+    NftIndividualComponent
   ],
   imports: [
     BrowserModule,
