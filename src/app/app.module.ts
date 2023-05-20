@@ -10,6 +10,8 @@ import { ChartModule } from 'primeng/chart';
 import { ChartExampleComponent } from './modules/graficas/chart-example/chart-example.component';
 import { BodyComponent } from './modules/view/body/body.component';
 import { PresentationComponent } from './modules/view/body/presentation/presentation/presentation.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { PresentationComponent } from './modules/view/body/presentation/presenta
     BrowserAnimationsModule,
     MatButtonModule,
     ButtonModule,
-    ChartModule
+    ChartModule,
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

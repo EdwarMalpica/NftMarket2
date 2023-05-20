@@ -1,14 +1,11 @@
 
 .header {
     height: 100vh;
-    width: 100vw;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(76, 216, 255, 0.8),
-        rgba(30, 108, 217, 0.8)
-      ),
-      url('https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg');
-    left: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: 
+      url('https://img.freepik.com/foto-gratis/juguetes-dinosaurios-halloween-primer-plano_23-2148609858.jpg?w=1380&t=st=1684558948~exp=1684559548~hmac=4c410dd9549ea815b1f07f6ea51891a4cc78e2ffd7bbf8dc9687f0216623ed89');
     background-position: 0%; /*Mueve pescaos*/
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 55vh, 0 100%);
@@ -18,6 +15,11 @@
     position: absolute;
     top: 40px;
     left: 40px;
+}
+
+.brand-box button{
+    right: 0;
+    margin-left: 5%;
 }
 
 .brand { font-size: 20px; }
