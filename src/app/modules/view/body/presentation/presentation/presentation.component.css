@@ -42,15 +42,15 @@
 
 .heading-primary-main {
     display: block;
-    font-size: 26px;
-    font-weight: 400;
+    font-size: 40px;
+    font-weight: 80px;
     letter-spacing: 5px;
 }
 
 .heading-primary-sub {
     display: block;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 20px;
     letter-spacing: 7.4px;
 }
 
@@ -80,3 +80,73 @@
     color: #777;
   font-size: 14px;
 }
+
+#connectButton{
+    font-weight: bolder;
+    width: 200px;
+    height: 70px;
+    color: white;
+    border-color: white;    
+}
+
+#scroll-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  
+  #scroll-link:hover {
+    color: #ff0000;
+  }
+
+  .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-description {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .subsection-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  
+  .subsection-description {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .myimg {
+    --g:#0000 ,#000 .5deg 90deg,#0000 91deg;
+    --m:
+      conic-gradient(from 45deg ,var(--g)) 20px 0  no-repeat,
+      conic-gradient(from 135deg,var(--g)) 0 20px  no-repeat,
+      conic-gradient(from 225deg,var(--g)) -20px 0 no-repeat,
+      conic-gradient(from 315deg,var(--g)) 0 -20px no-repeat;
+    -webkit-mask: var(--m);
+            mask: var(--m);
+    transition: .3s linear;
+    filter: grayscale(.5);
+    cursor: pointer;
+    margin: 30px;
+    width: 250px; 
+    height: 250px; 
+  }
+  .myimg:hover {
+    -webkit-mask-position: 0 0;
+            mask-position: 0 0;
+    filter: grayscale(0);
+  }
+  
