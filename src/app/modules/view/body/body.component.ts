@@ -34,5 +34,5 @@ export class BodyComponent {
   mostrarCuenta(){
     this.router.navigate(['/account']);
   }
-
+ 
 }
