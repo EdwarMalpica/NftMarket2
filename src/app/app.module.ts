@@ -24,6 +24,7 @@ import { GraphThreeComponent } from './modules/view/body/analitycs/graph-three/g
 import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/graph-four.component';
 import { ConexionService } from './services/conexion.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MintNftComponent } from './modules/view/body/mint-nft/mint-nft.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { HttpClientModule } from '@angular/common/http';
     GraphOneComponent,
     GraphTwoComponent,
     GraphThreeComponent,
-    GraphFourComponent
+    GraphFourComponent,
+    MintNftComponent
   ],
   imports: [
     BrowserModule,

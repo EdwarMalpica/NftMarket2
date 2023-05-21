@@ -111,25 +111,42 @@ export class ConexionService {
   };
 
   mintNft = async () => {
+
+    this.addressUser.subscribe((res: string) => {
+      return res;
+    });
+
     const random = Math.floor(Math.random() * 36) + 1;
     const metadata = this.metadaPath +random+".json";
 
     const data = await this.contract.methods.mintNFT(metadata).encodeABI();
-    const nonce = await this.web3.eth.getTransactionCount(this.addressUser);
+    const nonce = await this.web3.eth.getTransactionCount(
+      this.addressUser.getValue()
+    );
 
-    const estimateGas = await this.contract.methods.mintNFT(metadata).estimateGas({
-      from: this.addressUser,
-      to: this.contractAddress,
-      gas: this.web3.utils.toHex(this.web3.utils.toWei('50','gwei')),
-      data:data
-    });
+    const estimateGas = await this.contract.methods
+      .mintNFT(metadata)
+      .estimateGas({
+        from: this.addressUser.getValue(),
+        to: this.contractAddress,
+        value: this.web3.utils.toHex(this.web3.utils.toWei('100000000', 'gwei')),
+        nonce: nonce,
+        data: data,
+      });
+
      const params = {
-       from: this.addressUser,
+       from: this.addressUser.getValue(),
        to: this.contractAddress,
        gas: this.web3.utils.toHex(estimateGas),
-       gasPrice: this.web3.utils.toHex(this.web3.utils.toWei('50', 'gwei')),
+       gasPrice: this.web3.utils.toHex(
+         this.web3.utils.toWei('50', 'gwei')
+       ),
+       value: this.web3.utils.toHex(this.web3.utils.toWei('100000000', 'gwei')),
        data: data,
      };
+
+    console.log(params);
+
 
     window.ethereum.request({
       method: "eth_sendTransaction",
@@ -137,8 +154,9 @@ export class ConexionService {
     }).then(res=>{
       console.log("Hash", res);
 
-    })
-  };
+    });
+  }
+
 
   getName = async () => {
     const response = await this.contract.methods.name().call();
