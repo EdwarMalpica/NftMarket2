@@ -19,10 +19,24 @@ export class UserScanComponent implements OnInit{
     ];
 
     this.products = [
-      { hash: '0xc275dc8be39f50d12f66b6a63629c39da5bvxc33', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},
-      { hash: '0xc275dc8be39f50d12f66bdaw3629c39da5ba3456', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'OUT'},
-      { hash: '0xc275dc8be39f52343266b6a63629c39da5bae5bd', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},
-      { hash: '0xc275dc8be39f50dwefsdfs32423dfsdf34barfdf', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'}
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'OUT'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},{ hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'OUT'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'OUT'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'OUT'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'OUT'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'OUT'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'},
+      { hash: '0x123602ecae15e5e4f832ff08521e0616aa9bbcb0d8762ff7295ac688ceb15857', method: 'Transfer', date: '2023-05-18 16:06:05', type: 'IN'}
    ];
 
 }
