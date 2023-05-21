@@ -1,5 +1,6 @@
 <mat-drawer-container class="example-container">
     <mat-drawer #drawer class="example-sidenav" mode="side">
+
       <p>NFT Market</p>
       <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
       <button class="menuButton" (click)="mostrarPresentation()">
@@ -7,6 +8,9 @@
       </button>
       <button  class="menuButton" (click)="mostrarCuenta()">
         Cuenta (Mis NFTs)
+      </button>
+      <button  class="menuButton" (click)="mostrarUserScan()">
+        Scan
       </button>
       <button  class="menuButton" (click)="mostrarAnalytics()">
         Analytics

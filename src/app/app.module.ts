@@ -11,11 +11,11 @@ import { BodyComponent } from './modules/view/body/body.component';
 import { PresentationComponent } from './modules/view/body/presentation/presentation/presentation.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
-
+import { UserScanComponent } from './modules/view/body/user-scan/user-scan.component';
+import { TableModule } from 'primeng/table';
 import { NftIndividualComponent } from './modules/view/body/nft-individual_previo/nft-individual.component';
 import { MyAccountComponent } from './modules/view/body/my-account/my-account.component';
 import { InfoNftComponent } from './modules/view/body/info-nft/info-nft.component';
-
 import { AnalitycsComponent } from './modules/view/body/analitycs/analitycs.component';
 import { GraphOneComponent } from './modules/view/body/analitycs/graph-one/graph-one.component';
 import { GraphTwoComponent } from './modules/view/body/analitycs/graph-two/graph-two.component';
@@ -28,6 +28,11 @@ import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/gra
     ChartExampleComponent,
     BodyComponent,
     PresentationComponent,
+    UserScanComponent
+  ],
+  imports: [
+    BrowserModule,
+
     NftIndividualComponent,
     MyAccountComponent,
     InfoNftComponent,
@@ -36,19 +41,17 @@ import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/gra
     GraphTwoComponent,
     GraphThreeComponent,
     GraphFourComponent
-
-  ],
-  imports: [
-    BrowserModule,
+    routing,
     BrowserAnimationsModule,
     MatButtonModule,
     routing,
     ButtonModule,
     ChartModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    TableModule
   ],
-  providers: [AppComponent, appRoutingProviders],
+  providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
