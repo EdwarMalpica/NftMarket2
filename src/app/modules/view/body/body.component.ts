@@ -11,7 +11,20 @@ export class BodyComponent {
   showFiller = false;
   constructor(private router: Router, private route: ActivatedRoute) { }
 
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.isConected = params['dato'];
+    });
+  }
   actualizarVariablePadre(nuevoValor: boolean) {
     this.isConected = nuevoValor;
+  }
+
+  mostrarPresentation() {
+    this.router.navigate(['/home']);
+  }
+  
+  mostrarAnalytics() {
+    this.router.navigate(['/analytics']);
   }
 }

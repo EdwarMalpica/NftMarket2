@@ -1,14 +1,17 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+
+
 import { RouterModule, Routes } from '@angular/router';
-import { BodyComponent } from './modules/view/body/body.component';
 import { PresentationComponent } from './modules/view/body/presentation/presentation/presentation.component';
+import { AnalitycsComponent } from './modules/view/body/analitycs/analitycs.component';
 
 const routes: Routes = [
-
+  { path: 'home', component: PresentationComponent },
+  { path: '', component: PresentationComponent },
+  { path: 'analytics', component: AnalitycsComponent },
+  { path: 'home/:dato', component: PresentationComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const appRoutingProviders: any[] = [];
+export const routing: ModuleWithProviders<any> = RouterModule.forRoot(routes);

@@ -1,0 +1,13 @@
+.analytics{
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a una nueva línea */
+    justify-content: flex-start; /* Alinear los elementos a la izquierda */
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 100px;
+    padding-left: 7%;
+    gap: 10%;
+    row-gap: 100px;
+    padding-bottom: 100px;
+}
+
