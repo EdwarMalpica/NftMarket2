@@ -7,26 +7,25 @@ import Swal from 'sweetalert2';
 declare let window:any;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ConexionService {
-
-  
-
-  web3:any;
-  get web3Instance(){return this.web3}
-  chainIds:string[] = ['0x1','80001'];
-  addressUser:any= new BehaviorSubject<string>('');
+  web3: any;
+  get web3Instance() {
+    return this.web3;
+  }
+  chainIds: string[] = ['0x13881'];
+  addressUser: any = new BehaviorSubject<string>('');
   loginUser: any = new BehaviorSubject<boolean>(false);
 
-  constructor() { 
+  constructor() {
     if (typeof window.ethereum !== 'undefined') {
       this.web3 = new Web3(window.ethereum);
     } else {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'No tienes instalado MetaMask!'
+        text: 'No tienes instalado MetaMask!',
       });
     }
   }
@@ -35,7 +34,9 @@ export class ConexionService {
     this.handleIdChainChanged();
   }
   async handleIdChainChanged() {
-    const chainId: string = await window.ethereum.request({ method: 'eth_chainId' });
+    const chainId: string = await window.ethereum.request({
+      method: 'eth_chainId',
+    });
 
     if (this.chainIds.includes(chainId)) {
       this.handleAccountsChanged();
@@ -43,7 +44,7 @@ export class ConexionService {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Selecciona la red principal de Ethereum (Mainet)'
+        text: 'Selecciona la red testnet de Poligon (Mumbai)',
       });
     }
     window.ethereum.on('chainChanged', (res: string) => {
@@ -52,7 +53,7 @@ export class ConexionService {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Selecciona la red testnet de Poligon (Mumbai)'
+          text: 'Selecciona la red testnet de Poligon (Mumbai)',
         });
       } else {
         if (this.addressUser.getValue() === '') {
@@ -64,7 +65,9 @@ export class ConexionService {
     });
   }
   async handleAccountsChanged() {
-    const accounts: string[] = await window.ethereum.request({ method: 'eth_requestAccounts' });
+    const accounts: string[] = await window.ethereum.request({
+      method: 'eth_requestAccounts',
+    });
 
     this.addressUser.next(accounts[0]);
     this.authBackend();
@@ -86,5 +89,4 @@ export class ConexionService {
   logout() {
     this.loginUser.next(false);
   }
-
 }
