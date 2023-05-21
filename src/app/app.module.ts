@@ -11,6 +11,11 @@ import { BodyComponent } from './modules/view/body/body.component';
 import { PresentationComponent } from './modules/view/body/presentation/presentation/presentation.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+
+import { NftIndividualComponent } from './modules/view/body/nft-individual_previo/nft-individual.component';
+import { MyAccountComponent } from './modules/view/body/my-account/my-account.component';
+import { InfoNftComponent } from './modules/view/body/info-nft/info-nft.component';
+
 import { AnalitycsComponent } from './modules/view/body/analitycs/analitycs.component';
 import { GraphOneComponent } from './modules/view/body/analitycs/graph-one/graph-one.component';
 import { GraphTwoComponent } from './modules/view/body/analitycs/graph-two/graph-two.component';
@@ -23,11 +28,15 @@ import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/gra
     ChartExampleComponent,
     BodyComponent,
     PresentationComponent,
+    NftIndividualComponent,
+    MyAccountComponent,
+    InfoNftComponent,
     AnalitycsComponent,
     GraphOneComponent,
     GraphTwoComponent,
     GraphThreeComponent,
     GraphFourComponent
+
   ],
   imports: [
     BrowserModule,
