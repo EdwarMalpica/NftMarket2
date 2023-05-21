@@ -1,18 +1,28 @@
 <mat-drawer-container class="example-container">
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <button (click)="mostrarPresentation()" mat-raised-button>
-        Presentación
+
+      <p>NFT Market</p>
+      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+      <button class="menuButton" (click)="mostrarPresentation()">
+        Home
       </button>
-      <button (click)="mostrarUserScan()" mat-raised-button>
+      <button  class="menuButton" (click)="mostrarCuenta()">
+        Cuenta (Mis NFTs)
+      </button>
+      <button  class="menuButton" (click)="mostrarUserScan()">
         Scan
       </button>
+      <button  class="menuButton" (click)="mostrarAnalytics()">
+        Analytics
+      </button>
+      <button class="menuButton">
+        Mintear
+      </button>
     </mat-drawer>
-  
     <div class="example-sidenav-content">
       <button type="button" mat-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
       <router-outlet></router-outlet>
     </div>
-  
 </mat-drawer-container>

@@ -13,6 +13,15 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import { UserScanComponent } from './modules/view/body/user-scan/user-scan.component';
 import { TableModule } from 'primeng/table';
+import { NftIndividualComponent } from './modules/view/body/nft-individual_previo/nft-individual.component';
+import { MyAccountComponent } from './modules/view/body/my-account/my-account.component';
+import { InfoNftComponent } from './modules/view/body/info-nft/info-nft.component';
+import { AnalitycsComponent } from './modules/view/body/analitycs/analitycs.component';
+import { GraphOneComponent } from './modules/view/body/analitycs/graph-one/graph-one.component';
+import { GraphTwoComponent } from './modules/view/body/analitycs/graph-two/graph-two.component';
+import { GraphThreeComponent } from './modules/view/body/analitycs/graph-three/graph-three.component';
+import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/graph-four.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,9 +32,19 @@ import { TableModule } from 'primeng/table';
   ],
   imports: [
     BrowserModule,
+
+    NftIndividualComponent,
+    MyAccountComponent,
+    InfoNftComponent,
+    AnalitycsComponent,
+    GraphOneComponent,
+    GraphTwoComponent,
+    GraphThreeComponent,
+    GraphFourComponent
     routing,
     BrowserAnimationsModule,
     MatButtonModule,
+    routing,
     ButtonModule,
     ChartModule,
     MatSidenavModule,

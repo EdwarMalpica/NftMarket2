@@ -16,7 +16,7 @@ export class BodyComponent {
       this.isConected = params['dato'];
     });
   }
-  
+
   actualizarVariablePadre(nuevoValor: boolean) {
     this.isConected = nuevoValor;
   }
@@ -27,5 +27,11 @@ export class BodyComponent {
   
   mostrarUserScan() {
     this.router.navigate(['/scan']);
+
+  mostrarAnalytics() {
+    this.router.navigate(['/analytics']);
+  }
+  mostrarCuenta(){
+    this.router.navigate(['/account']);
   }
 }
