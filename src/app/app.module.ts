@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { routing, appRoutingProviders } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
@@ -12,27 +11,50 @@ import { BodyComponent } from './modules/view/body/body.component';
 import { PresentationComponent } from './modules/view/body/presentation/presentation/presentation.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+
 import { InfoNftComponent } from './modules/view/body/info-nft/info-nft.component';
+import { UserScanComponent } from './modules/view/body/user-scan/user-scan.component';
+import { TableModule } from 'primeng/table';
+import { NftIndividualComponent } from './modules/view/body/nft-individual_previo/nft-individual.component';
+import { MyAccountComponent } from './modules/view/body/my-account/my-account.component';
+import { InfoNftComponent } from './modules/view/body/info-nft/info-nft.component';
+import { AnalitycsComponent } from './modules/view/body/analitycs/analitycs.component';
+import { GraphOneComponent } from './modules/view/body/analitycs/graph-one/graph-one.component';
+import { GraphTwoComponent } from './modules/view/body/analitycs/graph-two/graph-two.component';
+import { GraphThreeComponent } from './modules/view/body/analitycs/graph-three/graph-three.component';
+import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/graph-four.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChartExampleComponent,
+    NftIndividualComponent,
     BodyComponent,
     PresentationComponent,
-    InfoNftComponent
+    InfoNftComponent,
+    UserScanComponent,
+    NftIndividualComponent,
+    MyAccountComponent,
+    InfoNftComponent,
+    AnalitycsComponent,
+    GraphOneComponent,
+    GraphTwoComponent,
+    GraphThreeComponent,
+    GraphFourComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    routing,
     BrowserAnimationsModule,
     MatButtonModule,
+    routing,
     ButtonModule,
     ChartModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    TableModule
   ],
-  providers: [],
+  providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

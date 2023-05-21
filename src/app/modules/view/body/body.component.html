@@ -1,18 +1,28 @@
 <mat-drawer-container class="example-container">
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
+
+      <p>NFT Market</p>
       <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
+      <button class="menuButton" (click)="mostrarPresentation()">
+        Home
+      </button>
+      <button  class="menuButton" (click)="mostrarCuenta()">
+        Cuenta (Mis NFTs)
+      </button>
+      <button  class="menuButton" (click)="mostrarUserScan()">
+        Scan
+      </button>
+      <button  class="menuButton" (click)="mostrarAnalytics()">
+        Analytics
+      </button>
+      <button class="menuButton">
+        Mintear
       </button>
     </mat-drawer>
-  
     <div class="example-sidenav-content">
-      <button type="button" mat-button (click)="drawer.toggle()" *ngIf="isConected">
+      <button type="button" mat-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <app-presentation [isConected]="isConected" (cambioVariable)="actualizarVariablePadre($event)"></app-presentation>
-      <app-info-nft></app-info-nft>
+      <router-outlet></router-outlet>
     </div>
-  
 </mat-drawer-container>
