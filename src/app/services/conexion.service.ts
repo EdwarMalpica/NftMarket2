@@ -152,9 +152,9 @@ export class ConexionService {
       method: "eth_sendTransaction",
       params: [params]
     }).then(res=>{
-      console.log("Hash", res);
-
+      return res;
     });
+
   }
 
 

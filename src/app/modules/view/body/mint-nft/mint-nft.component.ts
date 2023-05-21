@@ -9,13 +9,13 @@ import { ConexionService } from 'src/app/services/conexion.service';
 })
 export class MintNftComponent {
 
+  hash:any;
   constructor(private route:Router,
     private conexion:ConexionService){
 
   }
 
-
   mintNft(){
-    this.conexion.mintNft();
+    this.hash =this.conexion.mintNft();
   }
 }
