@@ -2,27 +2,22 @@
     <mat-drawer #drawer class="example-sidenav" mode="side">
       <p>NFT Market</p>
       <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button class="menuButton">
+      <button class="menuButton" (click)="mostrarPresentation()">
         Home
       </button>
       <button  class="menuButton">
         Cuenta (Mis NFTs)
       </button>
-      <button  class="menuButton">
+      <button  class="menuButton" (click)="mostrarAnalytics()">
         Analytics
       </button>
       <button class="menuButton">
         Mintear
       </button>
     </mat-drawer>
-    <div class="sticky-button">
-      <button type="button" mat-button (click)="drawer.toggle()" *ngIf="isConected" class="overlay-button">
-        <mat-icon fontIcon="menu"></mat-icon>
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
       </button>
     </div>
-    <div class="example-sidenav-content">
-
-      <app-presentation [isConected]="isConected" (cambioVariable)="actualizarVariablePadre($event)"></app-presentation>
-    </div>
-  
 </mat-drawer-container>
