@@ -26,13 +26,10 @@ import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/gra
   declarations: [
     AppComponent,
     ChartExampleComponent,
+    NftIndividualComponent,
     BodyComponent,
     PresentationComponent,
-    UserScanComponent
-  ],
-  imports: [
-    BrowserModule,
-
+    UserScanComponent,
     NftIndividualComponent,
     MyAccountComponent,
     InfoNftComponent,
@@ -41,6 +38,9 @@ import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/gra
     GraphTwoComponent,
     GraphThreeComponent,
     GraphFourComponent
+  ],
+  imports: [
+    BrowserModule,
     routing,
     BrowserAnimationsModule,
     MatButtonModule,

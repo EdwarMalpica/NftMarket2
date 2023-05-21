@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent {
-  isConected = false
+  isConected = false;
   showFiller = false;
   constructor(private router: Router, private route: ActivatedRoute) { }
 
@@ -27,11 +27,12 @@ export class BodyComponent {
   
   mostrarUserScan() {
     this.router.navigate(['/scan']);
-
+  }
   mostrarAnalytics() {
     this.router.navigate(['/analytics']);
   }
   mostrarCuenta(){
     this.router.navigate(['/account']);
   }
+
 }
