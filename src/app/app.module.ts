@@ -17,7 +17,6 @@ import { UserScanComponent } from './modules/view/body/user-scan/user-scan.compo
 import { TableModule } from 'primeng/table';
 import { NftIndividualComponent } from './modules/view/body/nft-individual_previo/nft-individual.component';
 import { MyAccountComponent } from './modules/view/body/my-account/my-account.component';
-import { InfoNftComponent } from './modules/view/body/info-nft/info-nft.component';
 import { AnalitycsComponent } from './modules/view/body/analitycs/analitycs.component';
 import { GraphOneComponent } from './modules/view/body/analitycs/graph-one/graph-one.component';
 import { GraphTwoComponent } from './modules/view/body/analitycs/graph-two/graph-two.component';
