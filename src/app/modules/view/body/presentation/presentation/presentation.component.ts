@@ -15,6 +15,7 @@ export class PresentationComponent {
   cambiarValor() {
     console.log("click");
     this.isConected = false?true:true;
-    this.cambioVariable.emit(this.isConected);
+    //this.cambioVariable.emit(this.isConected);
+    this.router.navigate(['/home', this.isConected]);
   }
 }
