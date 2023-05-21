@@ -1,0 +1,10 @@
+:root {
+    --text-color: initial;
+    --text-color-secondary: initial;
+    --surface-border: initial;
+}
+
+.card{
+    width: 1000px;
+    
+}

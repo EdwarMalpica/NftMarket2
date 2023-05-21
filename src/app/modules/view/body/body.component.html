@@ -1,1 +1,30 @@
-<app-presentation></app-presentation>
+<mat-drawer-container class="example-container">
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+
+      <p>NFT Market</p>
+      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+      <button class="menuButton" (click)="mostrarPresentation()">
+        Home
+      </button>
+      <button  class="menuButton" (click)="mostrarCuenta()">
+        Cuenta (Mis NFTs)
+      </button>
+      <button  class="menuButton" (click)="mostrarUserScan()">
+        Scan
+      </button>
+      <button  class="menuButton" (click)="mostrarAnalytics()">
+        Analytics
+      </button>
+      <button class="menuButton">
+        Mintear
+      </button>
+    </mat-drawer>
+    <div class="example-sidenav-content">
+      <div class="sticky-button">
+        <button type="button" mat-button (click)="drawer.toggle()" autofocus>
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
