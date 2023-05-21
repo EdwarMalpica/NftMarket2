@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./presentation.component.css']
 })
 export class PresentationComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router,) { }
 
   @Input() isConected!: boolean;
   @Output() cambioVariable = new EventEmitter<boolean>();

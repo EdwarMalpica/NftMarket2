@@ -22,6 +22,7 @@ import { GraphOneComponent } from './modules/view/body/analitycs/graph-one/graph
 import { GraphTwoComponent } from './modules/view/body/analitycs/graph-two/graph-two.component';
 import { GraphThreeComponent } from './modules/view/body/analitycs/graph-three/graph-three.component';
 import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/graph-four.component';
+import { ConexionService } from './services/conexion.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/gra
     MatIconModule,
     TableModule
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders,ConexionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
