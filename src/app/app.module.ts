@@ -11,6 +11,8 @@ import { BodyComponent } from './modules/view/body/body.component';
 import { PresentationComponent } from './modules/view/body/presentation/presentation/presentation.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+
+import { InfoNftComponent } from './modules/view/body/info-nft/info-nft.component';
 import { UserScanComponent } from './modules/view/body/user-scan/user-scan.component';
 import { TableModule } from 'primeng/table';
 import { NftIndividualComponent } from './modules/view/body/nft-individual_previo/nft-individual.component';
@@ -29,6 +31,7 @@ import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/gra
     NftIndividualComponent,
     BodyComponent,
     PresentationComponent,
+    InfoNftComponent,
     UserScanComponent,
     NftIndividualComponent,
     MyAccountComponent,
