@@ -5,6 +5,7 @@
   }
   
   .example-sidenav-content {
+    position: relative;
     height: 100%;
     width: 100%;
     align-items: center;
@@ -17,13 +18,23 @@
     left: 0;
     z-index: 999;
   }
-
+  
+  .sticky-button button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
   .overlay-button {
     position: absolute;
     transform: scale(2);
-    margin: 10px;
-    font-size: large;
     z-index: 9999;
+    width: 50px;
+  }
+
+  .sticky-button button mat-icon {
+    font-size: 24px; /* Cambia el tamaño del icono según tus preferencias */
+
+    color: #8c265e; /* Cambia el color del icono según tus preferencias */
   }
 
   .overlay-button mat-icon{

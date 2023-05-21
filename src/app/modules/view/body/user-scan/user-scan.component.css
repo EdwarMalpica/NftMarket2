@@ -1,12 +1,24 @@
 .portada {
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 15vh; /* Ajusta la altura deseada */
+  position: relative;
+  width: 100%;
+  margin-bottom: 100px;
 }
 
 .portada img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card {
+  position: absolute;
+  padding: 100px;
+  margin-top: 10%;
+  width: 80%;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  border-radius: 2% 10%;
+  background-image: url(https://images.unsplash.com/photo-1528295674080-a70f6cbf4ff0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80);
 }
