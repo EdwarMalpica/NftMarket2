@@ -27,4 +27,8 @@ export class BodyComponent {
   mostrarAnalytics() {
     this.router.navigate(['/analytics']);
   }
+
+  mostrarCuenta(){
+    this.router.navigate(['/account']);
+  }
 }
