@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { routing, appRoutingProviders } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
@@ -12,25 +11,28 @@ import { BodyComponent } from './modules/view/body/body.component';
 import { PresentationComponent } from './modules/view/body/presentation/presentation/presentation.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
-
+import { UserScanComponent } from './modules/view/body/user-scan/user-scan.component';
+import { TableModule } from 'primeng/table';
 @NgModule({
   declarations: [
     AppComponent,
     ChartExampleComponent,
     BodyComponent,
-    PresentationComponent
+    PresentationComponent,
+    UserScanComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    routing,
     BrowserAnimationsModule,
     MatButtonModule,
     ButtonModule,
     ChartModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    TableModule
   ],
-  providers: [],
+  providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

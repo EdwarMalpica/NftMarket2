@@ -1,17 +1,18 @@
 <mat-drawer-container class="example-container">
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
+      <button (click)="mostrarPresentation()" mat-raised-button>
+        Presentación
+      </button>
+      <button (click)="mostrarUserScan()" mat-raised-button>
+        Scan
       </button>
     </mat-drawer>
   
     <div class="example-sidenav-content">
-      <button type="button" mat-button (click)="drawer.toggle()" *ngIf="isConected">
+      <button type="button" mat-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <app-presentation [isConected]="isConected" (cambioVariable)="actualizarVariablePadre($event)"></app-presentation>
+      <router-outlet></router-outlet>
     </div>
   
 </mat-drawer-container>
