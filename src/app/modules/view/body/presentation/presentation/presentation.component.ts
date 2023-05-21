@@ -11,11 +11,6 @@ export class PresentationComponent {
 
   @Input() isConected!: boolean;
   @Output() cambioVariable = new EventEmitter<boolean>();
-  
-  cambiarValor() {
-    console.log("click");
-    this.isConected = false?true:true;
-    //this.cambioVariable.emit(this.isConected);
-    this.router.navigate(['/home', this.isConected]);
-  }
+
+
 }

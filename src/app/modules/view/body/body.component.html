@@ -21,10 +21,15 @@
     </mat-drawer>
     <div class="example-sidenav-content">
       <div class="sticky-button">
-        <button type="button" mat-button (click)="drawer.toggle()" autofocus>
+        <button type="button" mat-button (click)="drawer.toggle()" *ngIf="loginUser">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
+      <div class="sticky-connect">
+        <button *ngIf="!loginUser" (click)="cambiarValor()" class='btn btn-outline-secondary' id="connectButton">Conectar</button>
+        <button *ngIf="loginUser" class='glow-on-hover' id="connectedButton">Conectado: {{getShortenedAddress()}}</button>
+      </div>
+
       <router-outlet></router-outlet>
     </div>
 </mat-drawer-container>
