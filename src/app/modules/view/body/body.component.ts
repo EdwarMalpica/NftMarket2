@@ -27,11 +27,9 @@ export class BodyComponent {
   
   mostrarUserScan() {
     this.router.navigate(['/scan']);
-
+  }
   mostrarAnalytics() {
     this.router.navigate(['/analytics']);
   }
-  mostrarCuenta(){
-    this.router.navigate(['/account']);
-  }
+
 }
