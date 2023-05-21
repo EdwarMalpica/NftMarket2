@@ -50,9 +50,9 @@ export class BodyComponent {
   mostrarCuenta(){
     this.router.navigate(['/account', this.addressUser]);
   }
-
   cambiarValor() {
     this.conexion.connect();
     console.log("click");
   }
+
 }
