@@ -23,6 +23,7 @@ import { GraphTwoComponent } from './modules/view/body/analitycs/graph-two/graph
 import { GraphThreeComponent } from './modules/view/body/analitycs/graph-three/graph-three.component';
 import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/graph-four.component';
 import { ConexionService } from './services/conexion.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,9 @@ import { ConexionService } from './services/conexion.service';
     ChartModule,
     MatSidenavModule,
     MatIconModule,
-    TableModule
+    TableModule,
+    HttpClientModule,
+    
   ],
   providers: [appRoutingProviders,ConexionService],
   bootstrap: [AppComponent]
