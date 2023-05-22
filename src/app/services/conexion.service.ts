@@ -189,7 +189,7 @@ export class ConexionService {
       return imagenes;
     } catch (error) {
       console.error('Error al cargar los NFTs', error);
-      return null;
+      return [];
     }
   };
   getTransaction = async () => {

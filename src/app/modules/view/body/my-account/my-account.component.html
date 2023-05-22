@@ -1,38 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="portada">
-        <img src="https://images.unsplash.com/photo-1528295674080-a70f6cbf4ff0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80" alt="Imagen">
-    </div>
-    
-    <div class="head_container">
-        <div class="circle-container">
-            <img src="https://images.unsplash.com/photo-1557682268-e3955ed5d83f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=282&q=80" alt="Foto">
-        </div>
-        <div class="data">
-            <h2>Username</h2>
-            <h4>{{addressUser}}</h4>
-        </div>
-        
-    </div>
-    <div class="divider"></div>
-    <div class="nfts">
-        <app-nft-individual></app-nft-individual>
-        <app-nft-individual></app-nft-individual>
-        <app-nft-individual></app-nft-individual>
-        <app-nft-individual></app-nft-individual>
-        <app-nft-individual></app-nft-individual>
-        <app-nft-individual></app-nft-individual>
-    </div>
-    <footer>
-        <p class="footer-text">Collection</p>
-    </footer>
-</body>
+<div class="portada">
+    <img src="https://images.unsplash.com/photo-1528295674080-a70f6cbf4ff0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80" alt="Imagen">
+</div>
 
-</html>
+<div class="head_container">
+    <div class="circle-container">
+        <img src="https://images.unsplash.com/photo-1557682268-e3955ed5d83f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=282&q=80" alt="Foto">
+    </div>
+    <div class="data">
+        <h2>Username</h2>
+        <h4>{{ addressUser }}</h4>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<div *ngIf="loading">
+    <div #cargando>
+      <p>Cargando...</p>
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+
+  <div class="nfts" *ngIf="nfts && nfts.length > 0">
+    <div class="card" *ngFor="let nft of nfts; let i = index"> 
+      <div class="lines"></div>
+      <div class="imgBX">
+        <img src="{{nft.image}}" alt="Imagen">
+      </div>
+      <div class="card_content">
+        <div class="details">
+          <h2>{{nft.name}}</h2>
+          <div class="data">
+            <h3>{{nft.description}}</h3>
+          </div>
+          <div class="actionBtn">
+            <button class="menuButton" (click)="mostrarNFT(i)">Ver más</button>
+            <button>Intercambiar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
+  <div *ngIf="nfts && nfts.length === 0">
+    No hay NFTs disponibles.
+  </div>
+<footer>
+    <p class="footer-text"></p>
+</footer>
