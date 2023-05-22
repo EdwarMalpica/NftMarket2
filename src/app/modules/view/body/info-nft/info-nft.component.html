@@ -1,26 +1,27 @@
-
 <div class="container">
-
-    <div class="images">
-        <img class="overlay-image" src="{{nft.image}}" alt="Imagen">
+  <div class="row">
+    <div class="col-6">
+      <div class="images">
+        <img class="overlay-image" src="{{ nft?.image }}" alt="Imagen" />
+      </div>
     </div>
-    
-    <div class="nft">
+    <div class="col-6">
+      <div class="nft">
         <div class="data">
-            <h2>{{nft.name}}</h2>
-            <div class="separator"></div>   
-            <h4 >{{nft.name}}</h4>
-            <div *ngFor="let atb of nft.atributtes">
-                <h5>{{atb.trait_type}} : {{atb.value}}</h5>
-            </div>
-            <br>
-            <div class="separator"></div>
-            <h4>Precio:  </h4>
+          <h2>{{ nft?.name }}</h2>
+          <div class="separator"></div>
+          <h4>{{ nft?.name }}</h4>
+          <div *ngFor="let atb of nft?.atributtes">
+            <h5>{{ atb.trait_type }} : {{ atb.value }}</h5>
+          </div>
+          <br />
+          <div class="separator"></div>
+          <h4> {{nft?.description}} </h4>
         </div>
         <div class="actionBtn">
-            <button>Intercambiar</button>
+          <button>Intercambiar</button>
         </div>
+      </div>
     </div>
-    
+  </div>
 </div>
-
