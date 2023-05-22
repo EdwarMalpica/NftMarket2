@@ -68,6 +68,5 @@ export class BodyComponent {
   }
   cambiarValor() {
     this.conexion.connect();
-    console.log('click');
   }
 }
