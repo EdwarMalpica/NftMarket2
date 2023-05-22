@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'home/:dato', component: PresentationComponent },
   { path:  'account', component: MyAccountComponent },
   { path: 'account/:dato', component: MyAccountComponent },
-  { path:  'nft', component: InfoNftComponent },
+  { path: 'nft/:dato', component: InfoNftComponent },
   { path: 'mintNft', component:MintNftComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
