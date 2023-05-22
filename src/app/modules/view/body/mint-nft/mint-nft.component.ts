@@ -18,4 +18,6 @@ export class MintNftComponent {
   mintNft(){
     this.hash =this.conexion.mintNft();
   }
+
+  
 }

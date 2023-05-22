@@ -5,6 +5,7 @@ import Web3 from 'web3';
 import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
 import NFTContract from 'src/assets/contract/NFTContract.json';
+import { Network, Alchemy } from 'alchemy-sdk';
 
 
 declare let window:any;
@@ -156,10 +157,36 @@ export class ConexionService {
     });
 
   }
-
-
   getName = async () => {
     const response = await this.contract.methods.name().call();
     console.log(response);
+  };
+
+  getNFTs = async () => {
+    try {
+      const settings = {
+        apiKey: "46y53Y2nAMh5kR4A0erp2RQSLYRvk7Tt", // Replace with your Alchemy API Key.
+        network: Network.MATIC_MUMBAI, // Replace with your network.
+      };
+      const alchemy = new Alchemy(settings);
+      const latestBlock = await alchemy.nft.getNftsForOwner(this.addressUser.getValue());
+      const imagenes = [];
+
+      latestBlock.ownedNfts.forEach(element => {
+          if (element.rawMetadata.image != null) {
+              imagenes.push({
+                  name: element.rawMetadata.name,
+                  description: element.description,
+                  image: element.rawMetadata.image,
+                  atributtes: element.rawMetadata.attributes
+              });
+          } 
+      });
+
+      return imagenes;
+    } catch (error) {
+      console.error('Error al cargar los NFTs', error);
+      return null;
+    }
   };
 }
