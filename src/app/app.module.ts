@@ -25,6 +25,8 @@ import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/gra
 import { ConexionService } from './services/conexion.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MintNftComponent } from './modules/view/body/mint-nft/mint-nft.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { MintNftComponent } from './modules/view/body/mint-nft/mint-nft.componen
     MatIconModule,
     TableModule,
     HttpClientModule,
-    
+    MatTableModule,
+    MatPaginatorModule
+
   ],
   providers: [appRoutingProviders,ConexionService],
   bootstrap: [AppComponent]
