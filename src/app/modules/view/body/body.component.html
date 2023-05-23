@@ -1,35 +1,43 @@
 <mat-drawer-container class="example-container">
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-
-      <p>NFT Market</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button class="menuButton" (click)="mostrarPresentation()">
-        Home
-      </button>
-      <button  class="menuButton" (click)="mostrarCuenta()">
-        Cuenta (Mis NFTs)
-      </button>
-      <button  class="menuButton" (click)="mostrarUserScan()">
-        Scan
-      </button>
-      <button  class="menuButton" (click)="mostrarAnalytics()">
-        Analytics
-      </button>
-      <button class="menuButton">
-        Mintear
-      </button>
-    </mat-drawer>
-    <div class="example-sidenav-content">
-      <div class="sticky-button">
-        <button type="button" mat-button (click)="drawer.toggle()" *ngIf="loginUser">
-          <mat-icon>menu</mat-icon>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>NFT Market</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button class="menuButton" (click)="mostrarPresentation()">Home</button>
+    <button class="menuButton" (click)="mostrarCuenta()">
+      Cuenta (Mis NFTs)
+    </button>
+    <button class="menuButton" (click)="mostrarUserScan()">Scan</button>
+    <button class="menuButton" (click)="mostrarAnalytics()">Analytics</button>
+    <button class="menuButton" (click)="mintNft()">Mintear</button>
+  </mat-drawer>
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="">
+        <button
+          type="button"
+          mat-button
+          (click)="drawer.toggle()"
+          *ngIf="loginUser"
+        > 
+          <mat-icon style="color: white;">menu</mat-icon>
         </button>
       </div>
-      <div class="sticky-connect">
-        <button *ngIf="!loginUser" (click)="cambiarValor()" class='btn btn-outline-secondary' id="connectButton">Conectar</button>
-        <button *ngIf="loginUser" class='glow-on-hover' id="connectedButton">Conectado: {{getShortenedAddress()}}</button>
+      <div class="">
+        <button
+          *ngIf="!loginUser"
+          (click)="cambiarValor()"
+          class="btn btn-outline-secondary"
+          id="connectButton"
+        >
+          Conectar
+        </button>
+        <button *ngIf="loginUser" class="glow-on-hover" id="connectedButton">
+          Conectado: {{ getShortenedAddress() }}
+        </button>
       </div>
-
-      <router-outlet></router-outlet>
     </div>
+  </nav>
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
 </mat-drawer-container>

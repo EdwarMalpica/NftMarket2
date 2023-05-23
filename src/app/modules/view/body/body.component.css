@@ -3,14 +3,23 @@
     height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.5);
   }
-  
+
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  height: 10%;
+  background: linear-gradient(to bottom, #570205, #01000f 70%); /* Reemplaza los colores con los de tu elección */
+}
+
   .example-sidenav-content {
     position: relative;
     height: 100%;
     width: 100%;
     align-items: center;
     justify-content: center;
-    
   }
   .sticky-button {
     position: sticky;
@@ -25,7 +34,7 @@
     right: 0;
     z-index: 999;
   }
-  
+
   .sticky-button button {
     position: absolute;
     top: 10px;
@@ -43,9 +52,11 @@
     right: 10px;
     border: #000;
   }
-  
 
 
+.container-fluid{
+  position: absolute;
+}
 
   .overlay-button {
     position: absolute;
@@ -57,11 +68,11 @@
   .sticky-button button mat-icon {
     font-size: 24px; /* Cambia el tamaño del icono según tus preferencias */
 
-    color: #8c265e; /* Cambia el color del icono según tus preferencias */
+    color: #fafafa; /* Cambia el color del icono según tus preferencias */
   }
 
   .overlay-button mat-icon{
-    color: #a5a5a5;
+    color: #ffffff;
   }
   .example-sidenav {
     width: 20%;
@@ -100,23 +111,23 @@
     margin: 14px;
     color: white;
     border-color: white;
-    
+
   }
 
 #connectButton{
-  border-color: white;
-  color: white;
+  border-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   margin: 10px;
   width: 200px;
   font-size: 25px;
-  height: 80px;
+  height: 30%;
 }
 
 #connectedButton{
   margin: 10px;
-  width: 300px;
+  width: 100%;
   font-size: 25px;
-  height: 80px;
+  height: 30%;
 }
 
 

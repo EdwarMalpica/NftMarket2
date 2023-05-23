@@ -1,18 +1,5 @@
 
 
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 110%;
-    height: 75%;
-    margin-top: 5%;
-    background-position: center;
-    display: flex;
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
-    position: relative;
-}
-
 .container .background-image
 {
     width: 75%;
@@ -39,12 +26,8 @@
 .images {overflow:hidden;}
 
 .container .nft {
-    margin: 0;
-    margin-left: 20%;
-    width: 40%;
+    margin-top: 4%;
     background: #e8e4ff;
-    
-    height: 50%;
     border-radius: 4%;
 }
 .container .nft .data{
@@ -79,7 +62,7 @@
 .actionBtn button:nth-child(2)
 {
     background: #c7c1f0;
-}    
+}
 
 .actionBtn button:hover{
     opacity: 1;

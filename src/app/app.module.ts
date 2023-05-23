@@ -8,7 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
 import { ChartExampleComponent } from './modules/graficas/chart-example/chart-example.component';
 import { BodyComponent } from './modules/view/body/body.component';
-import { PresentationComponent } from './modules/view/body/presentation/presentation/presentation.component';
+import { PresentationComponent } from './modules/view/body/presentation/presentation.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 
@@ -24,6 +24,9 @@ import { GraphThreeComponent } from './modules/view/body/analitycs/graph-three/g
 import { GraphFourComponent } from './modules/view/body/analitycs/graph-four/graph-four.component';
 import { ConexionService } from './services/conexion.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MintNftComponent } from './modules/view/body/mint-nft/mint-nft.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { HttpClientModule } from '@angular/common/http';
     GraphOneComponent,
     GraphTwoComponent,
     GraphThreeComponent,
-    GraphFourComponent
+    GraphFourComponent,
+    MintNftComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     TableModule,
     HttpClientModule,
-    
+    MatTableModule,
+    MatPaginatorModule
+
   ],
   providers: [appRoutingProviders,ConexionService],
   bootstrap: [AppComponent]

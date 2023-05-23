@@ -5,6 +5,7 @@ import Web3 from 'web3';
 import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
 import NFTContract from 'src/assets/contract/NFTContract.json';
+import { Network, Alchemy } from 'alchemy-sdk';
 
 
 declare let window:any;
@@ -21,12 +22,20 @@ export class ConexionService {
   addressUser: any = new BehaviorSubject<string>('');
   loginUser: any = new BehaviorSubject<boolean>(false);
   contractJson = NFTContract;
-  contractAddress = "0x495BC48C1A697616EcdB3eac8024424dC4820e16";
+  contractAddress = '0x495BC48C1A697616EcdB3eac8024424dC4820e16';
   MUMBAI_TESNET_RPC =
     'https://nd-392-709-003.p2pify.com/e239d32099bcb34b42cbd5363cd9986e';
   contract: any;
   metadaPath =
     'https://gateway.pinata.cloud/ipfs/QmT8VK6ApCYM44GRickkAbAqoM32dXKfKyqsTvM1LQBjhb/';
+  httpApiAlchemy =
+    'https://polygon-mumbai.g.alchemy.com/v2/4aKgl-0gWpWo_BZ2p1ix-zAMjvDuu0Nv';
+
+  settings = {
+    apiKey: '46y53Y2nAMh5kR4A0erp2RQSLYRvk7Tt', // Replace with your Alchemy API Key.
+    network: Network.MATIC_MUMBAI, // Replace with your network.
+  };
+  alchemy = new Alchemy(this.settings);
 
   constructor(private http: HttpClient) {
     if (typeof window.ethereum !== 'undefined') {
@@ -111,37 +120,105 @@ export class ConexionService {
   };
 
   mintNft = async () => {
+    this.addressUser.subscribe((res: string) => {
+      return res;
+    });
+
     const random = Math.floor(Math.random() * 36) + 1;
-    const metadata = this.metadaPath +random+".json";
+    const metadata = this.metadaPath + random + '.json';
 
     const data = await this.contract.methods.mintNFT(metadata).encodeABI();
-    const nonce = await this.web3.eth.getTransactionCount(this.addressUser);
+    const nonce = await this.web3.eth.getTransactionCount(
+      this.addressUser.getValue()
+    );
 
-    const estimateGas = await this.contract.methods.mintNFT(metadata).estimateGas({
-      from: this.addressUser,
+    const estimateGas = await this.contract.methods
+      .mintNFT(metadata)
+      .estimateGas({
+        from: this.addressUser.getValue(),
+        to: this.contractAddress,
+        value: this.web3.utils.toHex(
+          this.web3.utils.toWei('100000000', 'gwei')
+        ),
+        nonce: nonce,
+        data: data,
+      });
+
+    const params = {
+      from: this.addressUser.getValue(),
       to: this.contractAddress,
-      gas: this.web3.utils.toHex(this.web3.utils.toWei('50','gwei')),
-      data:data
-    });
-     const params = {
-       from: this.addressUser,
-       to: this.contractAddress,
-       gas: this.web3.utils.toHex(estimateGas),
-       gasPrice: this.web3.utils.toHex(this.web3.utils.toWei('50', 'gwei')),
-       data: data,
-     };
+      gas: this.web3.utils.toHex(estimateGas),
+      gasPrice: this.web3.utils.toHex(this.web3.utils.toWei('50', 'gwei')),
+      value: this.web3.utils.toHex(this.web3.utils.toWei('100000000', 'gwei')),
+      data: data,
+    };
 
-    window.ethereum.request({
-      method: "eth_sendTransaction",
-      params: [params]
-    }).then(res=>{
-      console.log("Hash", res);
+    console.log(params);
 
-    })
+    window.ethereum
+      .request({
+        method: 'eth_sendTransaction',
+        params: [params],
+      })
+      .then((res) => {
+        return res;
+      });
   };
-
   getName = async () => {
     const response = await this.contract.methods.name().call();
-    console.log(response);
+  };
+
+  getNFTs = async () => {
+    try {
+      const latestBlock = await this.alchemy.nft.getNftsForOwner(
+        this.addressUser.getValue()
+      );
+      const imagenes = [];
+
+      latestBlock.ownedNfts.forEach((element) => {
+        if (element.rawMetadata.image != null) {
+          imagenes.push({
+            name: element.rawMetadata.name,
+            description: element.description,
+            image: element.rawMetadata.image,
+            atributtes: element.rawMetadata.attributes,
+          });
+        }
+      });
+
+      return imagenes;
+    } catch (error) {
+      console.error('Error al cargar los NFTs', error);
+      return [];
+    }
+  };
+  getTransaction = async () => {
+    const toAddress = this.addressUser.getValue();
+    const options = {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        method: 'alchemy_getAssetTransfers',
+        params: [
+          {
+            toAddress: toAddress,
+            category: ['external', 'erc721', 'erc20', 'erc1155', 'specialnft'],
+            withMetadata: true,
+            excludeZeroValue: true,
+          },
+        ],
+      }),
+    };
+    return new Promise((resolve, reject) => {
+      fetch(this.httpApiAlchemy, options)
+        .then((response) => response.json())
+        .then((data) => {
+          resolve(data.result?.transfers);
+        })
+        .catch((err) => reject(err));
+    });
   };
 }
