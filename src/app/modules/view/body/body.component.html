@@ -10,7 +10,7 @@
     <button class="menuButton" (click)="mostrarAnalytics()">Analytics</button>
     <button class="menuButton" (click)="mintNft()">Mintear</button>
   </mat-drawer>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+  <nav class="navbar">
     <div class="container-fluid">
       <div class="">
         <button
@@ -18,8 +18,8 @@
           mat-button
           (click)="drawer.toggle()"
           *ngIf="loginUser"
-        >
-          <mat-icon>menu</mat-icon>
+        > 
+          <mat-icon style="color: white;">menu</mat-icon>
         </button>
       </div>
       <div class="">
