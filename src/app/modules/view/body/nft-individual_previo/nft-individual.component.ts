@@ -9,8 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class NftIndividualComponent {
   @Input() nftData: any;
 
-  constructor(private router: Router, private route: ActivatedRoute) { 
-    console.log(this.nftData);
+  constructor(private router: Router, private route: ActivatedRoute) {
   }
 
   mostrarNFT() {

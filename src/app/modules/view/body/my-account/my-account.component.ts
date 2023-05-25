@@ -23,8 +23,7 @@ export class MyAccountComponent {
       try {
         this.nfts = await this.conexionService.getNFTs();
         this.loading = false;
-        console.log(this.nfts);
-        
+
       } catch (error) {
         console.error('Error al cargar los NFTs', error);
         this.loading = false;

@@ -6,9 +6,9 @@ import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
 import NFTContract from 'src/assets/contract/NFTContract.json';
 import { Network, Alchemy } from 'alchemy-sdk';
+import { resolve } from 'url';
 
-
-declare let window:any;
+declare let window: any;
 
 @Injectable({
   providedIn: 'root',
@@ -137,9 +137,7 @@ export class ConexionService {
       .estimateGas({
         from: this.addressUser.getValue(),
         to: this.contractAddress,
-        value: this.web3.utils.toHex(
-          this.web3.utils.toWei('100000000', 'gwei')
-        ),
+        value: this.web3.utils.toHex(this.web3.utils.toWei('10000000', 'gwei')),
         nonce: nonce,
         data: data,
       });
@@ -149,11 +147,9 @@ export class ConexionService {
       to: this.contractAddress,
       gas: this.web3.utils.toHex(estimateGas),
       gasPrice: this.web3.utils.toHex(this.web3.utils.toWei('50', 'gwei')),
-      value: this.web3.utils.toHex(this.web3.utils.toWei('100000000', 'gwei')),
+      value: this.web3.utils.toHex(this.web3.utils.toWei('10000000', 'gwei')),
       data: data,
     };
-
-    console.log(params);
 
     window.ethereum
       .request({
@@ -221,4 +217,89 @@ export class ConexionService {
         .catch((err) => reject(err));
     });
   };
+
+  getMintNfts() {
+    const options = { method: 'GET', headers: { accept: 'application/json' } };
+
+    return new Promise((resolve, reject) => {
+      fetch(
+        'https://eth-mainnet.g.alchemy.com/nft/v2/46y53Y2nAMh5kR4A0erp2RQSLYRvk7Tt/getNFTsForCollection?contractAddress=0x495BC48C1A697616EcdB3eac8024424dC4820e16&withMetadata=false',
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => {
+          resolve(response.result);
+        })
+        .catch((err) => reject(err));
+    });
+  }
+
+  getBalance() {
+    const options = {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        id: 1,
+        jsonrpc: '2.0',
+        params: [this.contractAddress, 'latest'],
+        method: 'eth_getBalance',
+      }),
+    };
+    return new Promise((resolve, reject) => {
+      fetch(this.httpApiAlchemy, options)
+        .then((response) => response.json())
+        .then((response) => {
+          resolve(response.result);
+        })
+        .catch((err) => reject(err));
+    });
+  }
+
+  getTransactionsContract = async () => {
+    const options = {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        method: 'alchemy_getAssetTransfers',
+        params: [
+          {
+            toAddress: this.contractAddress,
+            category: ['external'],
+            withMetadata: true,
+            excludeZeroValue: true,
+          },
+        ],
+      }),
+    };
+
+    return new Promise((resolve, reject) => {
+      fetch(this.httpApiAlchemy, options)
+        .then((response) => response.json())
+        .then((data) => {
+          resolve(data.result?.transfers);
+        })
+        .catch((err) => reject(err));
+    });
+  };
+
+
+  getOwnersForCollection(){
+    const options = { method: 'GET', headers: { accept: 'application/json' } };
+    return new Promise((resolve,reject)=>{
+      fetch('https://polygon-mumbai.g.alchemy.com/nft/v2/46y53Y2nAMh5kR4A0erp2RQSLYRvk7Tt/getOwnersForCollection?contractAddress=0x495BC48C1A697616EcdB3eac8024424dC4820e16&withTokenBalances=true',
+        options
+      )
+        .then((response) => response.json())
+        .then((response) =>{
+          resolve(response.ownerAddresses);
+        })
+        .catch((err) => reject(err));
+    } )
+  }
 }

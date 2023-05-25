@@ -19,8 +19,6 @@ export class InfoNftComponent {
       try {
         const nfts = await this.conexion.getNFTs();
         this.nft = nfts[this.index];
-        console.log(this.nft);
-        
       } catch (error) {
         console.error('Error al cargar los NFTs', error);
       }

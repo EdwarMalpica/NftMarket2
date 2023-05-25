@@ -1,24 +1,122 @@
-<section class="analytics">
-    
-        <div class="row">
-                <div class="col-5">
-                    <app-graph-one></app-graph-one>
-                </div>
-                <div class="col-5">
-                    <app-graph-two></app-graph-two>
-                </div>
+<div class="row">
+  <div class="col-12 container">
+    <div id="carouselAnalitycs" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselAnalitycs"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselAnalitycs"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselAnalitycs"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div
+        class="carousel-inner"
+        style="height: 50vh; display: flex; align-items: center"
+      >
+        <div class="carousel-item active">
+          <img
+            src="https://uploads-ssl.webflow.com/5f9a1900790900e2b7f25ba1/61b837478fc67232b32ba0ec_Best%20NFT%20Marketplace.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
         </div>
-        <div class="row">
-            <div class="col-5">
-                <app-graph-three></app-graph-three>
-            </div>
-            <div class="col-5">
-                <app-graph-four></app-graph-four>
-            </div>
+        <div class="carousel-item">
+          <img
+            src="https://res.cloudinary.com/jerrick/image/upload/v1648220910/623ddaed48b99f001d83ad22.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://nftnewspro.com/wp-content/uploads/2023/02/Polygon-NFT-sales-surpass-Ethereum-for-second-consecutive-month.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselAnalitycs"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselAnalitycs"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
 
+<div class="container">
+  <h1 class="my-3 mx-auto">Analytics</h1>
+  <p>Conoce Estadisticas detalladas sobre la colleccion CryptoDino</p>
+  <div class="row">
+    <div class="col-3 mx-2">
+      <!--Nft Minteados-->
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Nft Minteados</h5>
+        <p for="" class="card-text"> {{nftsN}} </p>
+      </div>
+      </div>
+    </div>
+    <div class="col-3 mx-2">
+      <!--Nft Minteados-->
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Ventas Totales</h5>
+          <p class="card-text">{{balance | currency:'USD':'symbol':'1.2-2'}} </p>
         </div>
-    
-   
-    
-    
+      </div>
+    </div>
+    <div class="col-3 mx-2">
+      <!--Nft Minteados-->
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Volumen/hora</h5>
+          <p class="card-text">{{volumen | currency:'USD':'symbol':'1.2-2'}} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="analytics">
+  <div class="row">
+    <div class="col-5">
+      <ng-container *ngIf="volumenHour && getLengtKeys() > 0">
+        <app-graph-one [dataSet]="volumenHour"></app-graph-one>
+      </ng-container>
+    </div>
+   <div class="col-5">
+      <ng-container *ngIf="nftsByOwner">
+        <app-graph-three [dataset]="nftsByOwner"></app-graph-three>
+      </ng-container>
+    </div>
+  </div>
+
 </section>
