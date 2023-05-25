@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-graph-three',
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class GraphThreeComponent {
   data: any;
-
+  @Input() dataset:any;
   options: any;
 
   ngOnInit() {
@@ -17,15 +17,17 @@ export class GraphThreeComponent {
       const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
       this.data = {
-          labels: ['69%', '21%', '9%', '1%'],
-          datasets: [
-              {
-                  label: 'Owners',
-                  backgroundColor: documentStyle.getPropertyValue('--blue-500'),
-                  borderColor: documentStyle.getPropertyValue('--blue-500'),
-                  data: [69, 21, 9, 1]
-              }
-          ]
+        labels: this.dataset
+          .map((a) => a.address)
+          .map((a) => `${a.substring(0, 5)}...${a.substring(a.length - 5)}`),
+        datasets: [
+          {
+            label: 'Owners',
+            backgroundColor: documentStyle.getPropertyValue('--blue-500'),
+            borderColor: documentStyle.getPropertyValue('--blue-500'),
+            data: this.dataset.map((a) => a.tokens),
+          },
+        ],
       };
 
       this.options = {

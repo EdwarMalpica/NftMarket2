@@ -26,8 +26,8 @@ export class UserScanComponent implements OnInit {
       .catch((error) => {
         console.error(error);
       });;
-    console.log(transactions);
     this.products = transactions;
     this.products.reverse()
   }
+
 }
